@@ -616,3 +616,243 @@ body.dark-theme {
     padding-top: 2rem;
   }
 }
+
+/*=============== RESUME BUILDER EDIT MODE STYLES ===============*/
+.edit-mode-button {
+  position: absolute;
+  right: 4rem;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.edit-mode-button:hover {
+  transform: scale(1.1);
+}
+
+.edit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.edit-form {
+  background: var(--container-color);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--title-color);
+  color: white;
+}
+
+.edit-form-header h2 {
+  font-size: var(--h2-font-size);
+  margin: 0;
+}
+
+.close-edit {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: transform .3s;
+}
+
+.close-edit:hover {
+  transform: scale(1.1);
+}
+
+.edit-form-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.edit-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.edit-section:last-of-type {
+  border-bottom: none;
+}
+
+.edit-section h3 {
+  color: var(--title-color);
+  margin-bottom: 1rem;
+  font-size: var(--h2-font-size);
+}
+
+.edit-section label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+}
+
+.edit-section input,
+.edit-section textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+  background: var(--body-color);
+  color: var(--title-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.edit-section textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.edit-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.edit-item input {
+  flex: 1;
+  margin: 0;
+}
+
+.edit-group {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--body-color);
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color);
+}
+
+.edit-group label {
+  margin-bottom: 0.5rem;
+}
+
+.add-btn,
+.remove-btn,
+.save-btn,
+.reset-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  transition: transform .3s, opacity .3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.add-btn {
+  background: hsl(207, 90%, 54%);
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.remove-btn {
+  background: hsl(0, 90%, 54%);
+  color: white;
+  padding: 0.5rem;
+}
+
+.save-btn {
+  background: hsl(142, 90%, 44%);
+  color: white;
+}
+
+.reset-btn {
+  background: hsl(37, 90%, 54%);
+  color: white;
+}
+
+.add-btn:hover,
+.remove-btn:hover,
+.save-btn:hover,
+.reset-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--text-color);
+}
+
+/*=============== DARK THEME ADJUSTMENTS FOR EDIT MODE ===============*/
+.dark-theme .edit-form {
+  background: hsl(40, 16%, 16%);
+}
+
+.dark-theme .edit-section input,
+.dark-theme .edit-section textarea {
+  background: hsl(40, 16%, 20%);
+  border-color: hsl(40, 24%, 40%);
+  color: hsl(40, 48%, 88%);
+}
+
+.dark-theme .edit-group {
+  background: hsl(40, 16%, 20%);
+  border-color: hsl(40, 24%, 40%);
+}
+
+@media screen and (max-width: 768px) {
+  .edit-mode-button {
+    right: 3.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .edit-form {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .edit-form-content {
+    padding: 1rem;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+  
+  .add-btn,
+  .save-btn,
+  .reset-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
